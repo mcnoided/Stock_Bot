@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 import time
 
-def correlation(stock1, stock2, days):
+def covariance(stock1, stock2, days):
     stock1_p = stock1.history[-days:]
     stock2_p = stock2.history[-days:]
 
