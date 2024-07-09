@@ -71,15 +71,12 @@ for ticker in tickers:
         continue
 
 size = len(tickers)
-same_industry = np.zeros((size,size))
 corr_matrix = np.zeros((size,size))
 for i in range(size):
     for j in range(size):
         days = min(stocks[i].history.size, stocks[j].history.size, 180)
         corr = correlation(stocks[i],stocks[j],days)
         corr_matrix[i][j] = corr
-        if stocks[i].info['industry'] == stocks[j].info['industry']:
-            same_industry[i][j] = 1
 
 correlations = []
 for i in range(size-1):
