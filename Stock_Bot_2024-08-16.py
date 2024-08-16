@@ -42,16 +42,6 @@ class Stock:
         except:
             return 'no data'
 
-        try:
-            self.info['dividendYield']
-        except:
-            return 'no dividend'
-        else:
-            if self.info['dividendYield'] < 0.045:
-                return 'low dividend'
-            if self.info['dividendYield'] > 0.1:
-                return 'high dividend'
-
         self.history = np.array(hist[-days:])
         if self.history.size < 180:
             return 'not enough data'
